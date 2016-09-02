@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <script>
+    var myArray = [];
+
+    function add(event) {
+        if (event.keyCode == 13) {
+            var lst = document.createElement("li");
+            var myArray = document.getElementById("myText").value;
+            var t = document.createTextNode(myArray);
+            for (i = 0; i < myArray.length; i++) {
+                lst.appendChild(t);
+                document.body.appendChild(lst);
+            }
+        } Clear();	
+    }
+   
+
+    function Clear() {
+        if (event.keyCode == 13)
+            document.getElementById("myText").value = "";
+    }
+    </script>
+    <div align="center">
+        <h1>todos</h1>
+        <input type="text" id="myText" placeholder="What needs to be done?" onkeypress="add(event)" />
+        
+        <ul id='list'>
+        </ul>
+    </div>
+</body>
+
+</html>
